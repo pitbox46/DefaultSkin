@@ -7,6 +7,7 @@
   "mixins": [
   ],
   "client": [
+    "PlayerInfoMixin"
   ],
   "injectors": {
     "defaultRequire": 1
