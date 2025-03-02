@@ -10,8 +10,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerInfo.class)
 public class PlayerInfoMixin {
+    @Inject(method = "getModelName", at = @At("HEAD"), cancellable = true)
+    private void setModelDefault(CallbackInfoReturnable<String> cir) {
+        cir.setReturnValue("default");
+    }
+
     @Inject(method = "getSkinLocation", at = @At("HEAD"), cancellable = true)
     private void setSkinDefault(CallbackInfoReturnable<ResourceLocation> cir) {
-        cir.setReturnValue(DefaultPlayerSkin.getDefaultSkin());
+        cir.setReturnValue(ResourceLocation.parse("textures/entity/player/wide/steve.png"));
     }
 }
