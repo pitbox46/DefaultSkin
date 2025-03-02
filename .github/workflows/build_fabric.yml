@@ -1,4 +1,4 @@
-name: Build Neoforge
+name: Build Fabric
 
 on:
   workflow_dispatch:
@@ -26,13 +26,13 @@ jobs:
 
       - name: Grant Execute Permission for Gradle
         run: |
-          chmod +x neoforge/gradlew
+          chmod +x fabric/gradlew
 
       - name: Build with Gradle
         run: |
-          (cd neoforge && ./gradlew build)
+          (cd fabric && ./gradlew build)
 
-      - name: mc-publish neoforge
+      - name: mc-publish fabric
         uses: Kira-NT/mc-publish@v3.3.0
         with:
           modrinth-id: E5b0G8DB
@@ -42,7 +42,7 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: |
-            neoforge/build/libs/!(*-@(dev|sources|javadoc)).jar
-            neoforge/build/libs/*-@(dev|sources|javadoc).jar
+            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+            fabric/build/libs/*-@(dev|sources|javadoc).jar
 
           changelog-file: CHANGELOG.*
