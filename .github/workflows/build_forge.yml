@@ -34,7 +34,7 @@ jobs:
       - name: mc-publish forge
         uses: Kira-NT/mc-publish@v3.3.0
         with:
-          modrinth-id: Ye73E82r
+          modrinth-id: E5b0G8DB
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
 
           curseforge-id: 695442
