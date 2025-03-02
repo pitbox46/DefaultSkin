@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "defaultskin",
+  "version": "${version}",
+  "name": "DefaultSkin",
+  "description": "Makes every player have the Steve skin",
+  "authors": ["pitbox46"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/defaultskin/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "github.pitbox46.defaultskin.client.DefaultSkinClient"
+    ],
+    "main": [
+      "github.pitbox46.defaultskin.DefaultSkin"
+    ]
+  },
+  "mixins": [
+    "defaultskin.mixins.json",
+    {
+      "config": "defaultskin.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=${minecraft_version}"
+  }
+}
