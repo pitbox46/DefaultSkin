@@ -17,6 +17,6 @@ public class PlayerInfoMixin {
 
     @Inject(method = "getSkinLocation", at = @At("HEAD"), cancellable = true)
     private void setSkinDefault(CallbackInfoReturnable<ResourceLocation> cir) {
-        cir.setReturnValue(ResourceLocation.parse("textures/entity/player/wide/steve.png"));
+        cir.setReturnValue(new ResourceLocation("textures/entity/player/wide/steve.png"));
     }
 }

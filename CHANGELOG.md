@@ -1,1 +1,1 @@
-- Fix model to be wide
+- Fix Neoforge crash
